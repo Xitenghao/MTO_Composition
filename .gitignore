@@ -8,6 +8,5 @@ results/*
 !results/xgb_params.json
 !results/rf_gmo.json
 !results/xgb_gmo.json
-data/*
-!data/schema.json
+data/
 private/

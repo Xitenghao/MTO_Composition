@@ -7,9 +7,17 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 RESULT_DIR = ROOT / "results"
 FIG_DIR = ROOT / "figures"
-SCHEMA = json.loads((DATA_DIR / "schema.json").read_text(encoding="utf-8"))
-FEATURE_COLUMNS = SCHEMA["features"]
-COMPOSITION_COLUMNS = SCHEMA["responses"]
+FEATURE_COLUMNS = [
+    "A/T", "FDSi", "MDa", "MDb", "MDc", "Mdi", "Crystal_size",
+    "Reaction_temp", "WHSV", "TOS", "CD1", "CD2", "AS0",
+    "Modification0", "LRS8", "LRS10",
+]
+COMPOSITION_COLUMNS = ["Sethylene", "Spropylene", "other"]
+INTEGER_COLUMNS = {"CD1", "CD2", "AS0", "Modification0", "LRS8", "LRS10"}
+COLUMN_DTYPES = {
+    column: "int64" if column in INTEGER_COLUMNS else "float64"
+    for column in FEATURE_COLUMNS + COMPOSITION_COLUMNS
+}
 
 def helm(n):
     mat = np.zeros((n - 1, n))
@@ -84,7 +92,7 @@ def split_frames():
             "corresponding author and place approved CSV files in data/: "
             + ", ".join(missing)
         )
-    frames = {name: pd.read_csv(DATA_DIR / file, dtype=SCHEMA["dtypes"],
+    frames = {name: pd.read_csv(DATA_DIR / file, dtype=COLUMN_DTYPES,
                                float_precision="round_trip") for name, file in files.items()}
     for name, frame in frames.items():
         if list(frame.columns) != FEATURE_COLUMNS + COMPOSITION_COLUMNS:

@@ -16,7 +16,7 @@ Python 3.13 was used. Install the dependencies from the repository root:
 python -m pip install -r code/requirements.txt
 ```
 
-After data access has been approved, place `train.csv`, `validation.csv`, and `test.csv` in `data/`. The required columns and numeric types are listed in `data/schema.json`; responses are percentages summing to 100. Then run:
+After obtaining the data, create a local `data/` directory and place `train.csv`, `validation.csv`, and `test.csv` in `data/`. The required columns and numeric types are defined in `code/common.py`; responses are percentages summing to 100. Then run:
 
 ```sh
 python code/experiments.py --stage check
