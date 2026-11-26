@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.log
+figures/
+results/*
+!results/rf_params.json
+!results/xgb_params.json
+!results/rf_gmo.json
+!results/xgb_gmo.json
+data/*
+!data/schema.json
+private/

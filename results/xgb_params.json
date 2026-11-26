@@ -1,0 +1,19 @@
+{
+  "eval": 729,
+  "best_mse": 0.0013039998678823393,
+  "best_params": {
+    "alpha": 0.6234136581866575,
+    "n_estimators": 157,
+    "max_depth": 12,
+    "min_child_weight": 2,
+    "learning_rate": 0.11775805737626537,
+    "gamma": 6.213833790390989e-06,
+    "colsample_bytree": 0.885505008222474,
+    "subsample": 0.8147259318591286,
+    "reg_alpha": 0.6652832675330242,
+    "reg_lambda": 0.7070070653633618
+  },
+  "cv_folds": 5,
+  "optimizer_seed": 12345,
+  "optimizer_version": "7.4.4"
+}
