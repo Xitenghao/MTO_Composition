@@ -4,7 +4,7 @@ Code for *Methanol-to-Olefins Product Distribution Prediction and Interpretation
 
 ## Data availability
 
-The data are not publicly available. Data may be made available by the corresponding author upon reasonable request, subject to approval.
+The data are available from the corresponding author upon reasonable request.
 
 This repository contains modeling code and parameter settings, without datasets, sample-level predictions, or saved Shapley values. Raw-data curation procedures are not included.
 
